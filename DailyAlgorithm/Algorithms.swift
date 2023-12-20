@@ -76,3 +76,10 @@ extension Algorithms {
         }
     }
 }
+
+extension Algorithms {
+    
+    func day3() {
+        
+    }
+}
