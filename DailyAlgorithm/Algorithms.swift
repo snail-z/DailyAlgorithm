@@ -80,6 +80,49 @@ extension Algorithms {
 extension Algorithms {
     
     func day3() {
+        Log("最后一个单词的长度")
+        var str = "   fly me   to   the moon  "
+        let len = lengthOfLastWord(str)
+        print("len is: \(len)")
         
+        func lengthOfLastWord(_ s: String) -> Int {
+//            var len = 0
+//            var isFlag = false
+//            for element in s.unicodeScalars.reversed() {
+//                if element.value == 32 {
+//                    guard isFlag else { continue }
+//                    return len
+//                } else {
+//                    isFlag = true
+//                    len += 1
+//                }
+//            }
+//            return len
+            
+            //            var values = str.components(separatedBy: " ")
+            //            for element in values.reversed() {
+            //                guard element == "" else {
+            //                    break
+            //                }
+            //                values.removeLast()
+            //            }
+            //            if let last = values.last {
+            //                return last.count
+            //            }
+            //            return .zero
+            
+            var len = 0
+            var idx = s.count - 1
+            while idx >= 0 {
+                let c = (s as NSString).character(at: idx)
+                if c == 32 {
+                    if len > 0 { break }
+                } else {
+                    len += 1
+                }
+                idx -= 1
+            }
+            return len
+        }
     }
 }
