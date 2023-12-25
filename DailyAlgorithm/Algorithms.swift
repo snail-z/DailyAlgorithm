@@ -20,8 +20,8 @@ extension Algorithms {
 
     func day1() {
         Log("两数之和")
-        var nums = [2, 7, 11, 15]
-        var target = 18
+        let nums = [2, 7, 11, 15]
+        let target = 18
         
         let res = solution(nums: nums, target: target)
         print("res ==> \(res)")
@@ -81,7 +81,7 @@ extension Algorithms {
     
     func day3() {
         Log("最后一个单词的长度")
-        var str = "   fly me   to   the moon  "
+        let str = "   fly me   to   the moon  "
         let len = lengthOfLastWord(str)
         print("len is: \(len)")
         
@@ -123,6 +123,46 @@ extension Algorithms {
                 idx -= 1
             }
             return len
+        }
+    }
+}
+
+extension Algorithms {
+    
+    func day4() {
+        Log("加一")
+        let digits = [1, 2, 3]
+        let res = plusOne(digits)
+        print("res is: \(res)")
+        func plusOne(_ digits: [Int]) -> [Int] {
+            
+            var factor = 10
+            var index = digits.count - 1
+            var numbers = 0
+            numbers += (digits[index] + 1)
+            index -= 1
+            
+            while index >= 0 {
+                numbers += digits[index] * factor
+                factor *= 10
+                index -= 1
+            }
+            
+            var arrays = [Int]()
+            while numbers > 0 {
+                let p = numbers % 10
+                arrays.append(p)
+                numbers /= 10
+            }
+            
+            var res = [Int]()
+            
+            for v in arrays.reversed() {
+
+                res.append(v)
+            }
+            
+            return res
         }
     }
 }

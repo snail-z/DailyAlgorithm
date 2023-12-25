@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     
     lazy var titles: [String] = {
-        return ["1.两数之和", "2.最大数", "3.最后一个单词的长度"]
+        return ["1.两数之和", "2.最大数", "3.最后一个单词的长度", "4.加一"]
     }()
 
     lazy var tableView = {
@@ -59,6 +59,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         case 1: obj.day1()
         case 2: obj.day2()
         case 3: obj.day3()
+        case 4: obj.day4()
         default: break
         }
     }
